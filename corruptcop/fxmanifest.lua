@@ -1,10 +1,26 @@
 fx_version 'cerulean'
 game 'gta5'
 
-description 'Corrupt Cop Role System'
-author 'OpenAI'
+author 'Deandre Lindsey'
+description 'Corrupt Cop System - Clock-in, Stash, Black Market Access'
+version '1.0.0'
 
-shared_script '@ox_lib/init.lua'
-shared_script 'config.lua'
-client_script 'client/main.lua'
-server_script 'server/main.lua'
+lua54 'yes'
+
+shared_scripts {
+    '@ox_lib/init.lua',
+    'config.lua'
+}
+
+client_scripts {
+    'client/*.lua'
+}
+
+server_scripts {
+    '@oxmysql/lib/MySQL.lua',
+    'server/*.lua'
+}
+
+files {
+    'locales/*.json'
+}
